@@ -247,3 +247,14 @@ IF (${PACKAGE_NAME}_ENABLE_Experimental_KokkosKernels_Features)
     STANDARD_PASS_OUTPUT
     )
 ENDIF ()
+
+TRIBITS_ADD_EXECUTABLE_AND_TEST(
+  GinkgoPreconditioner 
+  SOURCES 
+    Ifpack2_UnitTestGinkgoPreconditioner.cpp
+    ${TEUCHOS_STD_UNIT_TEST_MAIN}
+  ARGS ""
+  COMM serial mpi
+  NUM_MPI_PROCS 1
+  STANDARD_PASS_OUTPUT
+  )
